@@ -1,0 +1,16 @@
+.stage{
+  height: 300px;
+  width: 200px;
+
+}
+
+.container {
+  flex-direction: row ;
+  display: flex;
+}
+
+
+.card{
+  width: 200px;
+height: 300px;
+}
