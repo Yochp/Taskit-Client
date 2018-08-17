@@ -8,6 +8,9 @@ import { StageComponent } from './stage/stage.component';
 import { TaskComponent } from './task/task.component';
 import { TaskTagComponent } from './task-tag/task-tag.component';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { NewTaskComponent } from './new-task/new-task.component';
+import { ToolBarComponent } from './tool-bar/tool-bar.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,16 @@ import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     StageComponent,
     TaskComponent,
-    TaskTagComponent
+    TaskTagComponent,
+    NewTaskComponent,
+    ToolBarComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     NgbPaginationModule,
-    NgbAlertModule
+    NgbAlertModule,
+    AppRoutingModule
 
   ],
   providers: [],
