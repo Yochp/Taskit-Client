@@ -10,4 +10,5 @@ export const TASK: Task[] = [
     notes: [{content: 'content1', author: 'author1'}],
     stageId: 1,
 },
+
 ];

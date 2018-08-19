@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-task-tag',
@@ -7,16 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskTagComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
 
-    tags  = [
-     {id: 1, name: 'task1'},
+  tags = [
+    {id: 1, name: 'task1'},
     {id: 2, name: 'task2'},
     {id: 3, name: 'task3'},
-     ];
-
-
+    {id: 4, name: 'task4'},
+  ];
 
 
   ngOnInit() {
