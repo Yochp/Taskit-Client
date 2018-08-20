@@ -11,11 +11,11 @@ export class TaskTagComponent implements OnInit {
   }
 
 
-  tags = [
-    {id: 1, name: 'task1'},
-    {id: 2, name: 'task2'},
-    {id: 3, name: 'task3'},
-    {id: 4, name: 'task4'},
+  tasks = [
+    {id: 1, name: 'task1',  desc: 'bla'},
+    {id: 2, name: 'task2', desc: 'bla'},
+    {id: 3, name: 'task3', desc: 'bla'},
+    {id: 4, name: 'task4', desc: 'bla'},
   ];
 
 

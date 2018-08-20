@@ -11,6 +11,7 @@ import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { ToolBarComponent } from './tool-bar/tool-bar.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { DragulaModule } from 'ng2-dragula';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { AppRoutingModule } from './/app-routing.module';
     NgbModule,
     NgbPaginationModule,
     NgbAlertModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DragulaModule.forRoot()
+
 
   ],
   providers: [],
