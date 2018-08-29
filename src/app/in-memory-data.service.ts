@@ -4,7 +4,7 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
 
 
-    const TASK = [
+    const task = [
 
       {
         id: 1,
@@ -34,7 +34,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
     ];
 
-    return {TASK};
+    return {task};
 
   }
 

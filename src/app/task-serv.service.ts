@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Task} from './models/task.model';
-import {TASK} from './mocks/task.mocks';
+// import {TASK} from './mocks/task.mocks';
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -9,13 +10,15 @@ import { Observable, of } from 'rxjs';
 })
 export class TaskServService {
 
+  private taskUrl = 'api/task';  // URL to web api
 
-  constructor() {
+  constructor(  private http: HttpClient) {
   }
 
 
   geTasks(): Observable<Task[]> {
-    return of(TASK);
+    return this.http.get<Task[]>(this.taskUrl);
+    // of(TASK);
   }
 
 //
