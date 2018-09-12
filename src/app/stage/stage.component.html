@@ -1,7 +1,7 @@
 <div class="container">
   <div *ngFor="let stage of stages" class="stage card border-info m-3  " style="width: 20rem; height: 30rem">
     <div class="card-header">
-      <app-new-task *ngIf="stage.id == 1 "></app-new-task>
+      <app-new-task *ngIf="stage.id === 1 "></app-new-task>
       {{stage.name}}
     </div>
     <div class="card-body text-info">
