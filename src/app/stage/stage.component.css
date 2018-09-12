@@ -13,4 +13,17 @@
 .card{
   width: 200px;
 height: 300px;
+
+}
+
+
+
+.card-header{
+  display: inline-flex;
+  min-height: 50px;
+}
+
+.card-body{
+  overflow: auto;
+
 }

@@ -1,0 +1,14 @@
+
+<!--<input type="text" [(ngModel)]="term">-->
+<div class="container"   dragula="task">
+  <div *ngFor="let task of tasks |filter:term">
+<div class="tag card" style="width: 8em;">
+  <div class="card-body">
+    <h5 class="card-title">{{task.name}}</h5>
+
+
+    <p class="card-text">text</p>
+  </div>
+</div>
+</div>
+</div>
