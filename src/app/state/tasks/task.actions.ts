@@ -1,5 +1,5 @@
-import { Action } from '@ngrx/store';
-import { Task } from '../../models/task.model';
+import {Action} from '@ngrx/store';
+import {Task} from '../../models/task.model';
 
 export enum TaskActionTypes {
   TO_DO = '[Task] Init',

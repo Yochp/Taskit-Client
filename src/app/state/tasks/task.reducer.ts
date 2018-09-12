@@ -1,10 +1,10 @@
-import { TaskAction, TaskActionTypes } from './task.actions';
-import { Task } from '../../models/task.model';
-import { tasks as mockTasks } from '../../mocks/task.mocks';
+import {TaskAction, TaskActionTypes} from './task.actions';
+import {Task} from '../../models/task.model';
+import {TaskServService} from '../../task-serv.service';
 
 export type ITasksState = Task[];
 
-const initUserState: ITasksState = mockTasks;
+const initUserState: ITasksState = TaskServService.getTasks();
 
 export function taskReducer(state: ITasksState = initUserState, action: TaskAction) {
   switch (action.type) {

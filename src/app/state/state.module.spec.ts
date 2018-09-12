@@ -1,4 +1,4 @@
-import { StateModule } from './state.module';
+import {StateModule} from './state.module';
 
 describe('StateModule', () => {
   let stateModule: StateModule;
