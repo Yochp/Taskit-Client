@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {taskReducer} from './tasks/task.reducer';
 
 @NgModule({
   imports: [
-    CommonModule
-  ],
-  declarations: []
+    StoreModule.forRoot({
+      tasks: taskReducer,
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25 })
+  ]
 })
-export class StateModule { }
+export class AppStateModule { }
