@@ -13,6 +13,9 @@ export class InMemoryDataService implements InMemoryDbService {
         admin: 'admin1',
         notes: [{content: 'content1', author: 'author1'}],
         stageId: 1,
+        timeStamp: Date.now() -  1000 * 10,
+        code: 1234,
+
       },
 
       {
@@ -22,6 +25,10 @@ export class InMemoryDataService implements InMemoryDbService {
         admin: 'admin2',
         notes: [{content: 'content2', author: 'author2'}],
         stageId: 2,
+        timeStamp: Date.now(),
+        code: 1235,
+
+
       },
 
       {
@@ -31,6 +38,9 @@ export class InMemoryDataService implements InMemoryDbService {
         admin: 'admin3',
         notes: [{content: 'content3', author: 'author3'}],
         stageId: 3,
+        timeStamp: Date.now() -  1000 * 50,
+        code: 1236,
+
       },
     ];
 

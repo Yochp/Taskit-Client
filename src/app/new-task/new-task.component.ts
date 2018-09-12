@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
-
+import {TaskServService} from '../task-serv.service';
+import {Task} from '../models/task.model';
 
 
 @Component({
@@ -10,15 +10,30 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./new-task.component.css']
 })
 
-
-
-
-
 export class NewTaskComponent {
   closeResult: string;
 
-  constructor(private modalService: NgbModal) {}
 
+  newTask = new Task();
+
+
+
+  constructor(private modalService: NgbModal, private taskServ: TaskServService) {
+  }
+
+
+
+// send the new task to service
+  craeteNewTaskFunc() {
+
+    this.taskServ.createNewTaskFuncServ(this.newTask).subscribe( newtask => {
+        this.taskServ.geTasks().subscribe( consoleTask => console.log(consoleTask));
+      });
+
+
+  }
+
+  // bootsrap
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
@@ -27,13 +42,14 @@ export class NewTaskComponent {
     });
   }
 
+// bootstrap
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
       return 'by clicking on a backdrop';
     } else {
-      return  `with: ${reason}`;
+      return `with: ${reason}`;
     }
   }
 }

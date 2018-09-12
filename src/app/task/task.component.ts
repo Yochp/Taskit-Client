@@ -8,8 +8,6 @@ import {Observable} from 'rxjs';
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.css']
 })
-
-
 export class TaskComponent implements OnInit {
 
   constructor(private taskServ: TaskServService) {
@@ -23,12 +21,13 @@ export class TaskComponent implements OnInit {
 
 // get all the task from the service when the app is upp
   ngOnInit() {
-    this.getTasks();
+    this.taskServ.geTasks()
+      .subscribe(tasks => {
+        this.tasks = tasks;
+        console.table( this.tasks);
+      });
   }
 
-  getTasks(): void {
-    this.taskServ.geTasks()
-      .subscribe(tasks => this.tasks = tasks);
-  }
+
 
 }
