@@ -11,4 +11,4 @@ import {taskReducer} from './tasks/task.reducer';
     StoreDevtoolsModule.instrument({ maxAge: 25 })
   ]
 })
-export class AppStateModule { }
+export class StateModule { }

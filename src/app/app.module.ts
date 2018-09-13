@@ -16,6 +16,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { StateModule } from './state/state.module';
 
 
 
@@ -31,6 +32,7 @@ import { InMemoryDataService } from './in-memory-data.service';
     ToolBarComponent
   ],
   imports: [
+    StateModule,
     BrowserModule,
     NgbModule,
     NgbPaginationModule,

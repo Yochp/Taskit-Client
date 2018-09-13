@@ -4,10 +4,12 @@ import {TaskServService} from '../../task-serv.service';
 
 export type ITasksState = Task[];
 
-const initUserState: ITasksState = TaskServService.getTasks();
+const initTaskState: ITasksState = []; // TaskServService.getTasks();
 
-export function taskReducer(state: ITasksState = initUserState, action: TaskAction) {
+export function taskReducer(state: ITasksState = initTaskState, action: TaskAction) {
+
   switch (action.type) {
+
     case TaskActionTypes.TO_DO:
       return state.concat(action.payload);
 
