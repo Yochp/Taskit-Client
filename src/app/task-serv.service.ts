@@ -14,17 +14,12 @@ export class TaskServService {
   constructor(private http: HttpClient) {
   }
 
-
-  geTasks(): Observable<Task[]> {
+  getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.taskUrl);
   }
 
-
-
   createNewTaskFuncServ(newTask): Observable<Task[]> {
-// TODO insert/push the new task to database
+    // TODO insert/push the new task to database
     return this.http.post<Task[]>(this.taskUrl, newTask);
-
   }
-
 }

@@ -1,29 +1,24 @@
-// export class Task  {
-//   id: Number;
-//   name?: String;
-//   owner: String;
-//   admin: String;
-//   description?: String;
-//   notes: [ { content: String, author: String } ];
-//   stageId: Number;
-// }
-//
+export enum TaskStages {
+  TODO = 1,
+  WIP = 2,
+  HOLD = 3,
+  DONE = 4
+}
 
-
-export class Task  {
+export class Task {
   id: number;
   name: string;
   owner: string;
   admin: string;
   description: string;
-  notes: [ { content: string, author: string } ];
+  notes: [{content: string, author: string}];
   stageId: number;
-  timeStamp: any;
+  modified: any;
+  created: any;
   code: number;
 
   constructor() {
-    this.timeStamp = Date.now();
-    this.timeStamp = new Date(this.timeStamp ).toISOString();
+    this.modified = Date.now();
+    this.created = new Date(this.modified).toISOString();
   }
 }
-

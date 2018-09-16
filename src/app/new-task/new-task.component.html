@@ -1,9 +1,3 @@
-<!--<p>-->
-  <!--<button  class="newTaskB  w3-teal" (click)="open()" >+</button>-->
-<!--</p>-->
-
-
-
 <ng-template #content let-c="close" let-closeModal="dismiss">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">New Task</h4>
@@ -15,38 +9,38 @@
     <form>
       <div class="form-group">
         <label> Task Name </label>
-        <input type="text" class="form-control"   placeholder="Task Name" [(ngModel)]= "newTask.name" name="taskName">
+        <input type="text"
+               class="form-control"
+               placeholder="Task Name"
+               [(ngModel)]="newTask.name" name="taskName">
       </div>
 
       <div class="form-group">
         <label>description</label>
-        <input type="text" class="form-control" placeholder="Enter description" [(ngModel)]= "newTask.description" name="taskDesc">
+        <input type="text"
+               class="form-control"
+               placeholder="Enter description"
+               [(ngModel)]="newTask.description"
+               name="taskDesc">
       </div>
 
-
-          <select  class="form-control">
-            <option >Choose User</option>
-            <option>...</option>
-          </select>
-
-      <select  class="form-control">
-        <option >Choose Stage</option>
+      <select class="form-control">
+        <option>Choose User</option>
         <option>...</option>
       </select>
 
-
-
-
+      <select class="form-control">
+        <option>Choose Stage</option>
+        <option>...</option>
+      </select>
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="craeteNewTaskFunc(); closeModal('Cross click');">Save</button>
+    <button type="button" class="btn btn-outline-dark" (click)="craeteNewTaskFunc(); closeModal('Cross click');">Save
+    </button>
   </div>
 </ng-template>
 
-<button  class="newTaskB  w3-teal" (click)="open(content)" >+</button>
+<button class="newTaskBtn w3-teal" (click)="open(content)">+</button>
 
-<!--<hr>-->
-
-<!--<pre>{{closeResult}}</pre>-->
 

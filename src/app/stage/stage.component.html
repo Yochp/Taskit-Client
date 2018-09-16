@@ -1,3 +1,5 @@
+<!--
+
 <div class="container">
   <div *ngFor="let stage of stages" class="stage card border-info m-3  " style="width: 20rem; height: 30rem">
     <div class="card-header">
@@ -8,8 +10,92 @@
       <h5 class="card-title">About Stage {{stage.id}}</h5>
       <p class="card-text">here we put the tasks</p>
       <div ngClass="task">
-<app-task-tag></app-task-tag>
+        <app-task-tag></app-task-tag>
+      </div>
     </div>
+  </div>
+</div>
+
+-->
+
+<!--
+
+<div class="wrapper">
+  <div class="container-stages">
+    <div class="container-stage">
+      <div class="stage-head">
+        <label>[{{todo.length}}] To Do</label>
+      </div>
+      <div class="container-cards" dragula="TASK" id="todo" [(dragulaModel)]="todo">
+        <div *ngFor="let task of todo">
+          <div class="card">
+            <h5>{{task.name}}</h5>
+            <p>{{task.modified | date:'short'}}</p>
+            <p>{{task.created | date:'short'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-stage">
+      <div class="stage-head">
+        <label>[{{wip.length}}] Work In Progress</label>
+      </div>
+      <div class="container-cards" dragula="TASK" id="wip" [(dragulaModel)]="wip">
+        <div *ngFor="let task of wip">
+          <div class="card">
+            <h5>{{task.name}}</h5>
+            <p>{{task.modified | date:'short'}}</p>
+            <p>{{task.created | date:'short'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-stage">
+      <div class="stage-head">
+        <label>[{{hold.length}}] On Hold</label>
+      </div>
+      <div class="container-cards" dragula="TASK" id="hold" [(dragulaModel)]="hold">
+        <div *ngFor="let task of hold">
+          <div class="card">
+            <h5>{{task.name}}</h5>
+            <p>{{task.modified | date:'short'}}</p>
+            <p>{{task.created | date:'short'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-stage">
+      <div class="stage-head">
+        <label>[{{done.length}}] Complete</label>
+      </div>
+      <div class="container-cards" dragula="TASK" id="hold" [(dragulaModel)]="done">
+        <div *ngFor="let task of done">
+          <div class="card">
+            <h5>{{task.name}}</h5>
+            <p>{{task.modified | date:'short'}}</p>
+            <p>{{task.created | date:'short'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+-->
+
+<div class="wrapper">
+  <div class="container-stages">
+    <div class="container-stage" *ngFor="let stage of stages">
+      <div class="stage-head">
+        <label>({{stage.items.length}}) {{stage.name}}</label>
+      </div>
+      <div class="container-cards" dragula="TASKS" [(dragulaModel)]="stage.items">
+        <div class="card" *ngFor="let item of stage.items">
+          <h5>{{item.name}}</h5>
+          <p>{{item.modified | date:'short'}}</p>
+          <p>{{item.created | date:'short'}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

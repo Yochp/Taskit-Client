@@ -1,6 +1,6 @@
 import {TaskAction, TaskActionTypes} from './task.actions';
 import {Task} from '../../models/task.model';
-import {TaskServService} from '../../task-serv.service';
+// import {TaskServService} from '../../task-serv.service';
 
 export type ITasksState = Task[];
 
