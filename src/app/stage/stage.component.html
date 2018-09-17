@@ -1,22 +1,23 @@
-<!--
-
-<div class="container">
-  <div *ngFor="let stage of stages" class="stage card border-info m-3  " style="width: 20rem; height: 30rem">
-    <div class="card-header">
-      <app-new-task *ngIf="stage.id === 1 "></app-new-task>
-      {{stage.name}}
-    </div>
-    <div class="card-body text-info">
-      <h5 class="card-title">About Stage {{stage.id}}</h5>
-      <p class="card-text">here we put the tasks</p>
-      <div ngClass="task">
-        <app-task-tag></app-task-tag>
+<div class="wrapper">
+  <div class="container-stages">
+    <div class="container-stage" *ngFor="let stage of stages">
+      <div class="stage-head">
+        <app-task-new *ngIf="stage.stage === 1"></app-task-new>
+        <label>({{stage.items.length}}) {{stage.name}}</label>
+      </div>
+      <div class="container-cards" dragula="TASKS" [(dragulaModel)]="stage.items">
+        <div *ngFor="let item of stage.items">
+          <app-task [task]="item"></app-task>
+          <!--
+          <h5>{{item.name}}</h5>
+          <p>{{item.modified | date:'short'}}</p>
+          <p>{{item.created | date:'short'}}</p>
+          -->
+        </div>
       </div>
     </div>
   </div>
 </div>
-
--->
 
 <!--
 
@@ -83,19 +84,4 @@
 
 -->
 
-<div class="wrapper">
-  <div class="container-stages">
-    <div class="container-stage" *ngFor="let stage of stages">
-      <div class="stage-head">
-        <label>({{stage.items.length}}) {{stage.name}}</label>
-      </div>
-      <div class="container-cards" dragula="TASKS" [(dragulaModel)]="stage.items">
-        <div class="card" *ngFor="let item of stage.items">
-          <h5>{{item.name}}</h5>
-          <p>{{item.modified | date:'short'}}</p>
-          <p>{{item.created | date:'short'}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+

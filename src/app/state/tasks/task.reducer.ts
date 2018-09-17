@@ -1,10 +1,10 @@
 import {TaskAction, TaskActionTypes} from './task.actions';
 import {Task} from '../../models/task.model';
-// import {TaskServService} from '../../task-serv.service';
+// import {TaskService} from '../../task-serv.service';
 
 export type ITasksState = Task[];
 
-const initTaskState: ITasksState = []; // TaskServService.getTasks();
+const initTaskState: ITasksState = []; // TaskService.getTasks();
 
 export function taskReducer(state: ITasksState = initTaskState, action: TaskAction) {
 

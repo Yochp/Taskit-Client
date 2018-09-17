@@ -1,28 +1,33 @@
 import {Component, OnInit} from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import {TaskServService} from '../task-serv.service';
+import {TaskService} from '../services/task.service';
 import {Task} from '../models/task.model';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-new-task',
-  templateUrl: './new-task.component.html',
-  styleUrls: ['./new-task.component.css']
+  selector: 'app-task-new',
+  templateUrl: './task-new.component.html',
+  styleUrls: ['./task-new.component.css']
 })
-export class NewTaskComponent {
+export class TaskNewComponent implements OnInit {
 
   closeResult: string;
   newTask = new Task();
 
   constructor(
     private modalService: NgbModal,
-    private taskService: TaskServService) {
+    private taskService: TaskService,
+    private router: Router) {
   }
 
+  ngOnInit() {
+  }
 
   // send the new task to service
-  craeteNewTaskFunc() {
-    this.taskService.createNewTaskFuncServ(this.newTask).subscribe(newtask => {
-      this.taskService.getTasks().subscribe(consoleTask => console.log(consoleTask));
+  saveTask(): void {
+    this.taskService.addTask(this.newTask).subscribe(() => {
+      this.taskService.getTasks().subscribe(tasks => console.table(tasks));
+      this.router.navigateByUrl('/');
     });
   }
 

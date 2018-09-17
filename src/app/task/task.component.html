@@ -1,8 +1,6 @@
-<!--<input type="text" [(ngModel)]="term">-->
-<div class="tag card" style="width: 8em;">
-  <div class="card-body">
-    <h5 class="card-title">{{task.name}}</h5>
-    <p class="card-text">text</p>
-    <p class="card-text"> time: {{task.timeStamp | date:'short'}}</p>
-  </div>
+<div class="card">
+  <h5>{{task.name}}</h5>
+  <h5>{{task.owner}}</h5>
+  <p>{{task.modified | date:'short'}}</p>
+  <p>{{task.created | date:'short'}}</p>
 </div>

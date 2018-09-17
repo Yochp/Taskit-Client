@@ -18,7 +18,7 @@ import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {FooterComponent} from './footer/footer.component';
 import {StageComponent} from './stage/stage.component';
 import {TaskComponent} from './task/task.component';
-import {NewTaskComponent} from './new-task/new-task.component';
+import {TaskNewComponent} from './task-new/task-new.component';
 import {ToolBarComponent} from './tool-bar/tool-bar.component';
 import {AppRoutingModule} from './app-routing.module';
 import {StateModule} from './state/state.module';
@@ -30,7 +30,7 @@ import {StateModule} from './state/state.module';
     FooterComponent,
     StageComponent,
     TaskComponent,
-    NewTaskComponent,
+    TaskNewComponent,
     ToolBarComponent
   ],
   imports: [
