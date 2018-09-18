@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Task} from '../models/task.model';
 import {Observable} from 'rxjs';
+import {Task} from '../models/task.model';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 const httpOptions = {

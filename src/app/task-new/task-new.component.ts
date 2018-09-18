@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+// import {Location} from '@angular/common';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {TaskService} from '../services/task.service';
 import {Task} from '../models/task.model';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-task-new',
@@ -11,36 +11,40 @@ import {Router} from '@angular/router';
 })
 export class TaskNewComponent implements OnInit {
 
-  closeResult: string;
   newTask = new Task();
+  closeResult: string;
 
   constructor(
     private modalService: NgbModal,
-    private taskService: TaskService,
-    private router: Router) {
+    private taskService: TaskService) {
   }
 
   ngOnInit() {
   }
 
   // send the new task to service
-  saveTask(): void {
+  addTask(): void {
     this.taskService.addTask(this.newTask).subscribe(() => {
       this.taskService.getTasks().subscribe(tasks => console.table(tasks));
-      this.router.navigateByUrl('/');
     });
   }
 
   // bootstrap
   open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'})
+      .result.then(
+      (result) => {
+        this.closeResult = `Closed with: ${result}`;
+        this.addTask();
+        console.log(this.closeResult);
+      },
+      (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        console.log(this.closeResult);
+      });
   }
 
-  // bootstrap
+  // bootstrap private
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';

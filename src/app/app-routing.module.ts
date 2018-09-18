@@ -3,8 +3,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {StageComponent} from './stage/stage.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/', pathMatch: 'full'},
-  {path: '', component: StageComponent}
+  {path: '', redirectTo: '/stages', pathMatch: 'full'},
+  {path: 'stages', component: StageComponent}
 ];
 
 @NgModule({

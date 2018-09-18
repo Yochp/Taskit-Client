@@ -1,52 +1,42 @@
-<ng-template #content let-c="close" let-closeModal="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">New Task</h4>
-    <button class="btn btn-outline-dark" type="button" (click)="saveTask(); closeModal('Cross click');">Add</button>
-    <button class="close" type="button"  aria-label="Close" (click)="closeModal('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form>
-      <div class="form-group">
-        <input class="form-control"
-               type="text"
-               placeholder="Name"
-               [(ngModel)]="newTask.name" name="taskName">
+<ng-template #content let-closeModal="close" let-revokeModal="dismiss">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">New Task</h5>
       </div>
-      <div class="form-group">
-        <input class="form-control"
-               type="text"
-               placeholder="Description"
-               [(ngModel)]="newTask.description"
-               name="taskDesc">
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <input class="form-control"
+                   type="text"
+                   placeholder="Name"
+                   [(ngModel)]="newTask.name" name="taskName">
+          </div>
+          <div class="form-group">
+            <input class="form-control"
+                   type="text"
+                   placeholder="Description"
+                   [(ngModel)]="newTask.description"
+                   name="taskDesc">
+          </div>
+          <select class="form-control">
+            <option>Owner</option>
+            <option>...</option>
+          </select>
+        </form>
       </div>
-      <select class="form-control">
-        <option>Owner</option>
-        <option>...</option>
-      </select>
-    </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="closeModal('Add click')">Add</button>
+        <button type="button" class="btn btn-outline-dark" aria-label="Cancel" (click)="revokeModal('Cancel click')">
+          Cancel
+        </button>
+      </div>
+    </div>
   </div>
 </ng-template>
 
-<!--
-<button class="newTaskBtn" type="button" (click)="open(content)">+</button>
--->
-
-<button type="button"
-        class="float-right js-details-target btn-octicon p-1 tooltipped-w hide-sm column-menu-item tooltipped"
-        aria-label="Add a note to this column"
-        aria-expanded="true"
-        data-initial-state="false"
-        (click)="open(content)">
-  <svg class=" octicon octicon-plus"
-       viewBox="0 0 12 16"
-       version="1.1"
-       width="12"
-       height="16"
-       aria-hidden="true">
-    <path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"></path>
-  </svg>
+<button type="button" class="btn btn-light" aria-label="Open" (click)="open(content)">
+  <span aria-hidden="true">+</span>
 </button>
 
 
