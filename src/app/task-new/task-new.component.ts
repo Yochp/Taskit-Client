@@ -20,13 +20,14 @@ export class TaskNewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.taskService.getTasks().subscribe(tasks => console.table(tasks));
   }
 
   // send the new task to service
   addTask(): void {
-    this.taskService.addTask(this.newTask).subscribe(() => {
-      this.taskService.getTasks().subscribe(tasks => console.table(tasks));
-    });
+    this.taskService.addTask(this.newTask); // .subscribe(() => {
+      // this.taskService.getTasks().subscribe(tasks => console.table(tasks));
+    // });
   }
 
   // bootstrap

@@ -20,5 +20,6 @@ export class Task {
   constructor() {
     this.modified = Date.now();
     this.created = new Date(this.modified).toISOString();
+    this.stageId = TaskStages.TODO;
   }
 }

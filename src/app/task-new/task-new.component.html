@@ -1,5 +1,4 @@
 <ng-template #content let-closeModal="close" let-revokeModal="dismiss">
-  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">New Task</h5>
@@ -32,10 +31,9 @@
         </button>
       </div>
     </div>
-  </div>
 </ng-template>
 
-<button type="button" class="btn btn-light" aria-label="Open" (click)="open(content)">
+<button type="button" class="close" aria-label="Open" (click)="open(content)">
   <span aria-hidden="true">+</span>
 </button>
 

@@ -2,6 +2,7 @@ import {Component, OnInit, OnDestroy} from '@angular/core';
 import {DragulaService} from 'ng2-dragula';
 import {Subscription} from 'rxjs';
 import {TaskStages} from '../models/task.model';
+import {Task} from '../models/task.model';
 import {TaskService} from '../services/task.service';
 
 @Component({
@@ -10,6 +11,8 @@ import {TaskService} from '../services/task.service';
   styleUrls: ['./stage.component.css']
 })
 export class StageComponent implements OnInit, OnDestroy {
+
+  tasks: Task[];
 
   public stages: Array<any> = [
     {
@@ -62,9 +65,9 @@ export class StageComponent implements OnInit, OnDestroy {
   getTasks() {
     this.taskService.getTasks()
       .subscribe(tasks => {
-        // this.tasks = tasks;
-        console.table(tasks);
-        tasks.forEach(task => {
+        this.tasks = tasks;
+        console.table(this.tasks);
+        this.tasks.forEach(task => {
           console.log(task);
           switch (task.stageId) {
             case TaskStages.TODO:
