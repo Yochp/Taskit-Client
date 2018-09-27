@@ -1,6 +1,9 @@
-<div class="card">
-  <h5>{{task.name}}</h5>
-  <h5>{{task.owner}}</h5>
+<div class="card ">
+  <img  class="img" src="assets/images/pinIcon.png">
+  <h5 class="taskName" style="display: inline">{{task.name  }}</h5>
+  <h5 style="margin-top: 10px">{{task.owner}}</h5>
   <p>{{task.modified | date:'short'}}</p>
   <p>{{task.created | date:'short'}}</p>
+
 </div>
+

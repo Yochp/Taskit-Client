@@ -1,10 +1,15 @@
+.taskName {
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
+
 .card {
   cursor: grab;
   min-width: 55px;
   color: black;
-  border: 1px solid darkblue;
-  background-color: rgba(249, 249, 249, 0.55);
-  border-radius: 5px;
+  /*border: 1px solid darkblue;*/
+  background-color: rgb(251, 255, 255);
+  /*border-radius: 5px;*/
   /* height: 120px; */
   width: 250px;
   display: inline-block;
@@ -12,12 +17,36 @@
   position: relative;
   margin: 5px;
   padding: 5px;
+
+
+  border-width: 2px;
+  border-style: solid;
+  -webkit-border-image:
+    -webkit-gradient(linear, 0 0, 0 100%, from(#4c4c4c), to(rgba(0, 0, 0, 0))) 1 100%;
+  -webkit-border-image:
+    -webkit-linear-gradient(#4c4c4c, rgba(0, 0, 0, 0)) 1 100%;
+  -moz-border-image:
+    -moz-linear-gradient(#4c4c4c, rgba(0, 0, 0, 0)) 1 100%;
+  -o-border-image:
+    -o-linear-gradient(#4c4c4c, rgba(0, 0, 0, 0)) 1 100%;
+  border-image:
+    linear-gradient(to bottom, #4c4c4c, rgba(0, 0, 0, 0)) 1 100%;
+
 }
 
+
+
 .card:hover {
-  color: red;
+  background-color: rgba(167, 180, 181, 0.11);
   animation: neon 1.5s ease-in-out infinite alternate;
   border: none;
   outline: none;
   box-shadow: 3px 1px 8px 5px lightblue;
+}
+
+
+.img{
+  float: right;
+  height: 17px;
+  width: 17px;
 }

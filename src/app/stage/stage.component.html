@@ -1,13 +1,13 @@
 <div class="wrapper">
   <div class="container-stages">
-    <div class="container-stage" *ngFor="let stage of stages">
-      <div class="stage-head">
-        <label>({{stage.items.length}}) {{stage.name}}</label>
+    <div class="container-stage" *ngFor="let stage of stages ">
+      <div class="stage-head w3-panel w3-pale w3-leftbar w3-border-blue ">
+        <label>({{stage.items.length}}) {{stage.name }}</label>
         <app-task-new *ngIf="stage.stage === 1"></app-task-new>
       </div>
       <div class="container-cards" dragula="TASKS" [(dragulaModel)]="stage.items">
         <div *ngFor="let item of stage.items">
-          <app-task [task]="item"></app-task>
+          <app-task [task]="item" ></app-task>
         </div>
       </div>
     </div>

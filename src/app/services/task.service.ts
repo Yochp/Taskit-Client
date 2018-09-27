@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class TaskService {
 
-  private url = 'api/task';  // URL to web api
+  private url = 'api/tasks';  /** URL to web api*/
 
   constructor(private http: HttpClient) {
   }
@@ -24,7 +24,11 @@ export class TaskService {
 
   /** POST: add a new task to the DB */
   addTask(task: Task): Observable<Task> {
+    console.log('adding task');
     console.table(task);
+
     return this.http.post<Task>(this.url, task, httpOptions);
   }
+
+
 }

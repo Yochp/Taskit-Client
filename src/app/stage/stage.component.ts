@@ -66,6 +66,7 @@ export class StageComponent implements OnInit, OnDestroy {
     this.taskService.getTasks()
       .subscribe(tasks => {
         this.tasks = tasks;
+        console.log('getTasks() function');
         console.table(this.tasks);
         this.tasks.forEach(task => {
           console.log(task);
