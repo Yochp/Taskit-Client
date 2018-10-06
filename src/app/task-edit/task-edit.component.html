@@ -1,0 +1,19 @@
+<div class="container" >
+  <div class="card">
+    <div>
+      <label>Owner:
+        <input placeholder="Owner" [(ngModel)]="task.owner"/>
+      </label>
+    </div>
+    <div>
+      <label>Description:
+        <input placeholder="Description" [(ngModel)]="task.description "/>
+      </label>
+    </div>
+    <div >
+      <button type="submit" class="close" aria-label="Edit" (click)="save()">
+        <span aria-hidden="true">Save</span>
+      </button>
+    </div>
+  </div>
+</div>

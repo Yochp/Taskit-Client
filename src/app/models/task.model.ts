@@ -7,17 +7,17 @@ export enum TaskStages {
 
 export class Task {
   id: number;
-  name: string;
   owner: string;
+  created: any;
+  modified: any;
   admin: string;
   description: string;
-  notes: [{content: string, author: string}];
+  notes: [{content: string, author: string, date: any}];
   stageId: number;
-  modified: any;
-  created: any;
   code: number;
 
   constructor() {
+    this.id = -1;
     this.modified = Date.now();
     this.created = new Date(this.modified).toISOString();
     this.stageId = TaskStages.TODO;

@@ -11,7 +11,7 @@ import {DragulaModule} from 'ng2-dragula';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryDataService} from './in-memory-data.service';
+// import {InMemoryDataService} from './in-memory-data.service';
 
 import {AppComponent} from './app.component';
 import {NavBarComponent} from './nav-bar/nav-bar.component';
@@ -22,6 +22,7 @@ import {TaskNewComponent} from './task-new/task-new.component';
 import {ToolBarComponent} from './tool-bar/tool-bar.component';
 import {AppRoutingModule} from './app-routing.module';
 import {StateModule} from './state/state.module';
+import { TaskEditComponent } from './task-edit/task-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import {StateModule} from './state/state.module';
     StageComponent,
     TaskComponent,
     TaskNewComponent,
-    ToolBarComponent
+    ToolBarComponent,
+    StageComponent,
+    TaskEditComponent
   ],
   imports: [
     StateModule,
@@ -43,10 +46,10 @@ import {StateModule} from './state/state.module';
     FormsModule,
     Ng2SearchPipeModule,
     HttpClientModule,
-    DragulaModule.forRoot(),
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false}
-    )
+    DragulaModule.forRoot()
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, {dataEncapsulation: false}
+    // )
   ],
   providers: [],
   bootstrap: [AppComponent]

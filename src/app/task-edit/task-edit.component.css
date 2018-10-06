@@ -1,0 +1,15 @@
+.card {
+  cursor: grab;
+  min-width: 55px;
+  color: black;
+  border: 1px solid darkblue;
+  background-color: rgba(249, 249, 249, 0.55);
+  border-radius: 5px;
+  /* height: 120px; */
+  width: 250px;
+  display: inline-block;
+  text-align: left;
+  position: relative;
+  margin: 5px;
+  padding: 5px;
+}
