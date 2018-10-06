@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy, Input} from '@angular/core';
 import {DragulaService} from 'ng2-dragula';
 import {Subscription} from 'rxjs';
 import {TaskStages} from '../models/task.model';
@@ -71,7 +71,10 @@ export class StageComponent implements OnInit, OnDestroy {
           console.log(task);
           switch (task.stageId) {
             case TaskStages.TODO:
+              console.log(TaskStages.TODO);
               this.stages.find(item => item.stage === TaskStages.TODO).items.push(task);
+              console.log(this.stages.find(item => item.stage === TaskStages.TODO).name);
+              console.log(this.stages.find(item => item.stage === TaskStages.TODO).task);
               break;
             case TaskStages.WIP:
               this.stages.find(item => item.stage === TaskStages.WIP).items.push(task);
@@ -85,6 +88,11 @@ export class StageComponent implements OnInit, OnDestroy {
           }
         });
       });
+  }
+
+  add() {
+    const task = new Task();
+    this.stages.find(item => item.stage === TaskStages.TODO).items.push(task);
   }
 
   ngOnDestroy() {

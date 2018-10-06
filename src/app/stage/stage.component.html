@@ -3,16 +3,16 @@
     <div class="container-stage" *ngFor="let stage of stages">
       <div class="stage-head">
         <label>({{stage.items.length}}) {{stage.name}}</label>
-        <app-task-new *ngIf="stage.stage === 1"></app-task-new>
+        <!-- app-task-new *ngIf="stage.stage === 1"></app-task-new -->
+        <button *ngIf="stage.stage === 1" type="button" class="close" aria-label="Open" (click)="add()">
+          <span aria-hidden="true">+</span>
+        </button>
       </div>
       <div class="container-cards" dragula="TASKS" [(dragulaModel)]="stage.items">
-        <div *ngFor="let item of stage.items">
-          <app-task [task]="item"></app-task>
+        <div *ngFor="let task of stage.items">
+          <app-task [task]="task"></app-task>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-

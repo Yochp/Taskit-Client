@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-// import {Location} from '@angular/common';
+import {Router} from '@angular/router';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {TaskService} from '../services/task.service';
 import {Task} from '../models/task.model';
@@ -16,18 +16,23 @@ export class TaskNewComponent implements OnInit {
 
   constructor(
     private modalService: NgbModal,
-    private taskService: TaskService) {
+    private taskService: TaskService,
+    private router: Router) {
   }
 
   ngOnInit() {
-    this.taskService.getTasks().subscribe(tasks => console.table(tasks));
   }
 
   // send the new task to service
   addTask(): void {
-    this.taskService.addTask(this.newTask); // .subscribe(() => {
-      // this.taskService.getTasks().subscribe(tasks => console.table(tasks));
-    // });
+    this.taskService.addTask(this.newTask)
+      .subscribe(() => this.goBack());
+  }
+
+  goBack(): void {
+    console.log('Navigate By Url');
+    console.log(this.router);
+    this.router.navigateByUrl('/stages');
   }
 
   // bootstrap

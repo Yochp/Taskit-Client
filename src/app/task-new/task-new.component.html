@@ -1,36 +1,36 @@
 <ng-template #content let-closeModal="close" let-revokeModal="dismiss">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">New Task</h5>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <input class="form-control"
-                   type="text"
-                   placeholder="Name"
-                   [(ngModel)]="newTask.name" name="taskName">
-          </div>
-          <div class="form-group">
-            <input class="form-control"
-                   type="text"
-                   placeholder="Description"
-                   [(ngModel)]="newTask.description"
-                   name="taskDesc">
-          </div>
-          <select class="form-control">
-            <option>Owner</option>
-            <option>...</option>
-          </select>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="closeModal('Add click')">Add</button>
-        <button type="button" class="btn btn-outline-dark" aria-label="Cancel" (click)="revokeModal('Cancel click')">
-          Cancel
-        </button>
-      </div>
+  <div class="modal-content" role="dialog">
+    <div class="modal-header">
+      <h5 class="modal-title">New Task</h5>
     </div>
+    <div class="modal-body">
+      <form role="form">
+        <div class="form-group">
+          <input class="form-control"
+                 type="text"
+                 placeholder="Name"
+                 [(ngModel)]="newTask.name" name="name">
+        </div>
+        <div class="form-group">
+          <input class="form-control"
+                 type="text"
+                 placeholder="Description"
+                 [(ngModel)]="newTask.description"
+                 name="description">
+        </div>
+        <select class="form-control">
+          <option>Owner</option>
+          <option>...</option>
+        </select>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="closeModal('Add click')">Add</button>
+      <button type="button" class="btn btn-outline-dark" aria-label="Cancel" (click)="revokeModal('Cancel click')">
+        Cancel
+      </button>
+    </div>
+  </div>
 </ng-template>
 
 <button type="button" class="close" aria-label="Open" (click)="open(content)">
