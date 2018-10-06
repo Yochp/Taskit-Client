@@ -1,19 +1,43 @@
-<div class="container" >
-  <div class="card">
-    <div>
-      <label>Owner:
-        <input placeholder="Owner" [(ngModel)]="task.owner"/>
-      </label>
-    </div>
-    <div>
-      <label>Description:
-        <input placeholder="Description" [(ngModel)]="task.description "/>
-      </label>
-    </div>
-    <div >
-      <button type="submit" class="close" aria-label="Edit" (click)="save()">
-        <span aria-hidden="true">Save</span>
-      </button>
-    </div>
-  </div>
+<!--<div class="container" >-->
+  <!--<div class="card">-->
+    <!--<div>-->
+      <!--<label>Owner:-->
+        <!--<input placeholder="Owner" [(ngModel)]="task.owner"/>-->
+      <!--</label>-->
+    <!--</div>-->
+    <!--<div>-->
+      <!--<label>Description:-->
+        <!--<input placeholder="Description" [(ngModel)]="task.description "/>-->
+      <!--</label>-->
+    <!--</div>-->
+    <!--<div >-->
+      <!--<button type="submit" class="close" aria-label="Edit" (click)="save()">-->
+        <!--<span aria-hidden="true">Save</span>-->
+      <!--</button>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+<div class="editTask">
+<div class="w3-container w3-teal">
+  <h2>Edit Task</h2>
+</div>
+
+<form class="w3-container">
+
+  <label class="w3-text-teal" ><b>Task Name</b></label>
+  <input class="w3-input w3-border w3-light-grey" type="text" placeholder="Task Name" [(ngModel)]="task.name ">
+
+  <label class="w3-text-teal" ><b>Owner</b></label>
+  <input class="w3-input w3-border w3-light-grey" type="text" placeholder="Owner" [(ngModel)]="task.owner ">
+
+
+  <label class="w3-text-teal" ><b>Description</b></label>
+  <input class="w3-input w3-border w3-light-grey" type="text" placeholder="Description" [(ngModel)]="task.description ">
+
+
+
+  <button class="w3-btn w3-blue-grey" (click)="save()">save</button>
+</form>
 </div>

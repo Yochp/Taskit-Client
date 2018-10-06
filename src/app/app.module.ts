@@ -10,7 +10,7 @@ import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import {DragulaModule} from 'ng2-dragula';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
-import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+// import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 // import {InMemoryDataService} from './in-memory-data.service';
 
 import {AppComponent} from './app.component';

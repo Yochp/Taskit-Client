@@ -32,7 +32,7 @@ export class TaskService {
     const url = `${this.tasksUrl}/${id}`;
     return this.http.get<Task>(url)
       .pipe(
-        tap(() => this.log(`fetched robot id=${id}`)),
+        tap(() => this.log(`fetched task id=${id}`)),
         catchError(this.handleError<Task>(`getTask id=${id}`))
       );
   }

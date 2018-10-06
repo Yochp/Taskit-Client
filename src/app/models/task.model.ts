@@ -7,6 +7,7 @@ export enum TaskStages {
 
 export class Task {
   id: number;
+  name: string;
   owner: string;
   created: any;
   modified: any;
@@ -17,6 +18,7 @@ export class Task {
   code: number;
 
   constructor() {
+
     this.id = -1;
     this.modified = Date.now();
     this.created = new Date(this.modified).toISOString();

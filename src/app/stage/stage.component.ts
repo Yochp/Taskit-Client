@@ -92,6 +92,7 @@ export class StageComponent implements OnInit, OnDestroy {
 
   add() {
     const task = new Task();
+    task.name = 'new task';
     this.stages.find(item => item.stage === TaskStages.TODO).items.push(task);
   }
 
